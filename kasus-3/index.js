@@ -1,12 +1,7 @@
 #!/usr/bin/env node
 
 const binarySearch = require('./binary-search');
-
-function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+const random = require('../utils/random');
 
 function main() {
   const bsLable = 'binarySearch'; 
@@ -15,7 +10,7 @@ function main() {
   maxArr.forEach((m, idx) => {
     let nums = []; 
     for (let i = 0; i < m; i++) {
-      nums.push(getRandomInt(0+i, m))
+      nums.push(random.getInt(0+i, m));
     }
     
     // cpnums is sorted array
@@ -23,7 +18,7 @@ function main() {
     cpnums.sort((a, b) => a - b);
   
     // key is random between range
-    let key = getRandomInt(cpnums[0], m);
+    let key = random.getInt(cpnums[0], m);
     console.log(`\n>>> search ${key} in ${m} numbers.`);
 
     console.time(bsLable);
