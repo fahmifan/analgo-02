@@ -1,18 +1,35 @@
 #!/usr/bin/env node
 
-'use strict';
+const binarySearch = require('./binary-search');
 
-const insertionSort = require('./insertion-sort');
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 function main() {
-  let res = insertionSort([1, 0, 3, 5, 10, 30, 7]);
-  console.log(res);
+  const bsLable = 'binarySearch'; 
+  let maxArr = [10, 50, 100, 200, 300, 500, 999, 2000, 10000, 100000];
 
-  res = insertionSort([100, 45, 28, 3, 2, 1, 0]);
-  console.log(res);
+  maxArr.forEach((m, idx) => {
+    let nums = []; 
+    for (let i = 0; i < m; i++) {
+      nums.push(getRandomInt(0+i, m))
+    }
+    
+    // cpnums is sorted array
+    let cpnums = [...nums];
+    cpnums.sort((a, b) => a - b);
+  
+    // key is random between range
+    let key = getRandomInt(cpnums[0], m);
+    console.log(`\n>>> search ${key} in ${m} numbers.`);
 
-  res = insertionSort([7, 100, 10, 20, 50, 120, 0]);
-  console.log(res);
+    console.time(bsLable);
+    binarySearch(cpnums, key);
+    console.timeEnd(bsLable);  
+  });
 }
 
 main();

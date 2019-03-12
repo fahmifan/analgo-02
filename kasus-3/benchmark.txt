@@ -1,0 +1,30 @@
+
+>>> search 5 in 10 numbers.
+binarySearch: 0.380ms
+
+>>> search 11 in 50 numbers.
+binarySearch: 0.033ms
+
+>>> search 76 in 100 numbers.
+binarySearch: 0.015ms
+
+>>> search 93 in 200 numbers.
+binarySearch: 0.015ms
+
+>>> search 43 in 300 numbers.
+binarySearch: 0.017ms
+
+>>> search 316 in 500 numbers.
+binarySearch: 0.020ms
+
+>>> search 105 in 999 numbers.
+binarySearch: 0.030ms
+
+>>> search 383 in 2000 numbers.
+binarySearch: 0.033ms
+
+>>> search 6176 in 10000 numbers.
+binarySearch: 0.032ms
+
+>>> search 66454 in 100000 numbers.
+binarySearch: 0.026ms
